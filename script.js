@@ -32,12 +32,12 @@ function handleSymbol(symbol){
             if(buffer.length ===1){
                 buffer = '0';
             }else{
-                buffer = buffer.subString(0, buffer.
+                buffer = buffer.substring(0, buffer.
                     length - 1);
             }
             break;
         case '+':
-        case '-':
+        case '−':
         case '×':
         case '÷':
             handleMath(symbol);
@@ -64,7 +64,7 @@ function handleMath(symbol){
 function flushOperation(intBufffer){
     if(previousOperator === '+'){
         runningTotal += intBufffer;
-    }else if(previousOperator === '-'){
+    }else if(previousOperator === '−'){
         runningTotal -= intBufffer;
     }else if(previousOperator === '×'){
         runningTotal *= intBufffer;
